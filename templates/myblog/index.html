@@ -1,0 +1,150 @@
+{% extends "myblog/base.html" %}
+{% load static %}
+
+{% block head %}
+    <title>Cooking Blog</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">My Cooking Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Recipes
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Honey Cornbread Muffins</a>
+                        <a class="dropdown-item" href="#">Pizza Nachos</a>
+                        <a class="dropdown-item" href="#">Gingerbread Monkey Bread</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-success banner py-5 mb-5">
+        <a class="btn btn-danger" href="{% url 'logout' %}">Logout</a>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-12">
+                    <h1 class="display-4 text-white mt-5 mb-2">Welcome To My Cooking Blog</h1>
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <p class="card-text" style="color: black">This is a blog where I want to share all of the recipes I acquire on my legendary adventure to become a master Chef. As I journey the world searching for the ultimate recipe, I hope you will follow me on my quest. Thank you for taking the time to visit my page!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8 mb-5">
+                <h2>Why learn how to cook? </h2>
+                <hr>
+                <ul>
+                    <li>Beat stress. Cooking is fun way to relieve stress after a hard day of school or work</li>
+                    <li>Expand your mind. Learning to cook will help you understand world cultures, customs and flavors. You will also learn life skills like eating healthy, budgeting your money, and cleaning.</li>
+                    <li>Save some cash. Cooking is less expensive than eating at restaurants, fast food joints and school cafeterias. Spending money on pre-packaged meals gets too expensive for a young person and families on a budget.</li>
+                    <li>Eat food you love. You have control over your menu and can pick exactly what you want to eat at every meal.</li>
+                    <li>Boost your health and wellness. Preparing fresh foods will put much-needed nutrition into your diet and increase your energy and quality of health in the short and long run.</li>
+                    <li>Be more awesome. Cooking will boost your self-esteem. You will learn proper planning and preparation skills to see a task through from start to finish while contributing in a positive way to the health of your family and friends.</li>
+                    <li>Spread the love. Cooking creates a culture of giving and receiving positive energy to the people around you.</li>
+                    <li>Hang with friends. Cooking helps create time for hanging out with family and friends, having fun, and making memories that you will keep for the rest of your life.</li>
+                    <li>Express yourself. Cooking activities are a great way to express your creativity. You are the master of the canvas. Try new things! You can always eat your mistakes. Mmm, yes, those delicious mistakes!</li>
+                    <li>Use your brain. Cooking will help you practice subjects like science, reading and math, and will increase your critical hinking. Cooking is a great way to actually use skills you learned in school!</li>
+                </ul>
+                <a class="btn btn-primary btn-lg" href="https://www.google.com/search?q=how+to+cook&rlz=1C1CHBF_enUS922US922&oq=how+to+cook&aqs=chrome..69i57j0i457j0l6.3414j0j7&sourceid=chrome&ie=UTF-8">Learn Now!&raquo;</a>
+            </div>
+            <div class="col-md-4 mb-5">
+                <h2>Learn to Cook</h2>
+                <hr>
+                <address>
+                    <strong>Pork Roast School of Sautéing and Dicing</strong>
+                    <br>9999 Yummy Place
+                    <br>Funky Food, CA 10101
+                    <br>
+                </address>
+                <address>
+                    <abbr title="Phone">P:</abbr>
+                    (999) 999-9999
+                    <br>
+                    <abbr title="Email">E:</abbr>
+                    <a href="mailto:#">PorkRoast@notreal.com</a>
+                </address>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% static 'images/cornb.jpg' %}" alt="Corn Bread">
+                    <div class="card-body">
+                        <h4 class="card-title">Honey Cornbread Muffins</h4>
+                        <p class="card-text">These are the perfect companion to anything with barbeque sauce, perfect for any summer meal. They are slightly sweet, with a moist cake-like crumb.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Find Out More!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% static 'images/pnacho.jpg' %}" alt="Pizza Nachos">
+                    <div class="card-body">
+                        <h4 class="card-title">Pizza Nachos for a Party</h4>
+                        <p class="card-text">Pizza nachos are a combination of the two best party snacks, so obviously they themselves are incredible. If your looking for a perfect snack while watching the game with friends, this is it!</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Find Out More!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% static 'images/gingerb.jpg' %}" alt="Ginger Bread">
+                    <div class="card-body">
+                        <h4 class="card-title">Gingerbread Monkey Bread</h4>
+                        <p class="card-text">You can’t beat the smell of warm gingerbread, especially in the winter. It’s such a warm and cozy smell, especially fresh out of the oven. And that gingerbread smell gets even better when combined with christmas music!</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">Find Out More!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Chef Pepe Sylvia 2020</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+{% endblock %}

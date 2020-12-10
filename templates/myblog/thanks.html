@@ -1,0 +1,15 @@
+{% extends "myblog/base.html" %}
+{% load static %}
+{% block head %}
+    <title>
+        Thanks
+    </title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Thanks!</h1>
+        <p>Thank you for contacting us. We will get back to you as soon as possible.</p>
+        <a class="btn btn-success" href="{% url 'index' %}">Return</a>
+    </div>
+{% endblock %}

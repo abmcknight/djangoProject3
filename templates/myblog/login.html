@@ -1,0 +1,41 @@
+{% extends "myblog/base.html" %}
+{% load static %}
+
+{% block head %}
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"}>
+{% endblock %}
+
+{% block body %}
+{% if user.is_authenticated %}
+    <a href="{% url 'index' %}">You are already logged in.</a>
+{% else %}
+    <h2>Login</h2>
+    <div class="container-md" style="border: 3px solid #f1f1f1;">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="imgcontainer">
+                <img src="{% static 'images/Avatar.jpg' %}" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label><b>Username</b></label>
+                {{ form.username }}
+
+                <label><b>Password</b></label>
+                {{ form.password }}
+
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1"
+                <p>Not a member? <a href="{% url 'register' %}">Register</a></p>
+                <p>Forgot <a href="#">password?</a><p>
+            </div>
+        </form>
+    </div>
+{% endif %}
+{% endblock %}
